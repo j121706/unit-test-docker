@@ -7,7 +7,9 @@ RUN apt-get install -y -q wget make git libfl-dev
 
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
-RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz -C /usr/tmp/cmake
+RUN tar -xvf cmake-3.17.3-Linux-x86_64
+RUN mkdir /usr/tmp/cmake
+RUN mv go /usr/tmp/cmake
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
@@ -22,6 +24,7 @@ RUN apt-get install g++
 # Download and install Golang
 RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
 RUN tar -xvf go1.11.5.linux-amd64.tar.gz
+RUN mkdir /usr/tmp/go
 RUN mv go /usr/tmp/go
 
 # py output encoding
