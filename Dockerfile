@@ -28,8 +28,12 @@ RUN tar -xvf go1.11.5.linux-amd64.tar.gz
 # Move files
 RUN mkdir /usr/local/go
 RUN mkdir /usr/local/cmake
-RUN mv cmake-3.17.3-Linux-x86_64 /usr/tmp/cmake
-RUN mv go /usr/tmp/go
+RUN mv cmake-3.17.3-Linux-x86_64 /usr/local/cmake
+RUN mv go /usr/local/go
+
+# Remove files
+RUN rm go1.11.5.linux-amd64.tar.gz
+RUN rm cmake-3.17.3-Linux-x86_64.tar.gz
 
 # py output encoding
 ENV PYTHONIOENCODING=utf-8
