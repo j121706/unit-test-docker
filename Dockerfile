@@ -7,8 +7,7 @@ RUN apt-get install -y -q wget make git libfl-dev
 
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
-RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
-RUN mv cmake-3.17.3-Linux-x86_64 /usr/tmp/cmake
+RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz -C /usr/tmp/cmake
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
