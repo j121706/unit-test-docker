@@ -7,7 +7,7 @@ RUN apt-get install -y -q wget make git libfl-dev
 
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
-RUN tar -xvf cmake-3.17.3-Linux-x86_64
+RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
 RUN mkdir /usr/tmp/cmake
 RUN mv go /usr/tmp/cmake
 
