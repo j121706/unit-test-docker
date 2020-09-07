@@ -18,6 +18,7 @@ RUN apt-get install -y -q python3 python3-pip
 RUN pip3 install -r pip-install-list.txt
 
 # Install C/C++
+RUN apt-get install make
 RUN apt-get install build-essential
 RUN apt-get install g++
 
