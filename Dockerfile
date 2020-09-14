@@ -16,8 +16,8 @@ RUN apt-get install g++ -y
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
 RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
 RUN cd cmake-3.17.3-Linux-x86_64
-RUN ./bootstrap
-RUN make
+RUN cd ./bootstrap
+RUN make -j8
 RUN make install -y
 RUN cmake --version
 RUN cd /
