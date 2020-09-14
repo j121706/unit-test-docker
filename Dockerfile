@@ -15,12 +15,8 @@ RUN apt-get install g++ -y
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
 RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
-RUN cd cmake-3.17.3-Linux-x86_64
-RUN cd ./bootstrap
-RUN make -j8
-RUN make install -y
+RUN ln -sf cmake-3.17.3-Linux-x86_64/bin/*  /usr/bin/
 RUN cmake --version
-RUN cd /
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
