@@ -10,7 +10,6 @@ COPY pip-install-list.txt .
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
 RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
-RUN mkdir /usr/local/cmake/build
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
@@ -30,6 +29,7 @@ RUN tar -xvf go1.11.5.linux-amd64.tar.gz
 # Move files
 RUN mkdir /usr/local/go
 RUN mkdir /usr/local/cmake
+RUN mkdir /usr/local/cmake/build
 RUN mv cmake-3.17.3-Linux-x86_64 /usr/local/cmake
 RUN mv go /usr/local/go
 
