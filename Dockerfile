@@ -20,7 +20,7 @@ RUN pip3 install -r pip-install-list.txt
 # Install C/C++
 RUN apt-get install make
 RUN apt-get install build-essential
-sudo apt-get install build-essential cmake
+RUN sudo apt-get install build-essential cmake
 RUN apt-get install g++
 
 # Download and install Golang
