@@ -8,9 +8,9 @@ RUN apt-get install -y -q wget make git libfl-dev
 COPY pip-install-list.txt .
 
 # Install C/C++
-RUN apt-get install make
-RUN apt-get install build-essential
-RUN apt-get install g++
+RUN apt-get install make -y whatever
+RUN apt-get install build-essential -y whatever
+RUN apt-get install g++ -y whatever
 
 # Install Cmake
 RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
@@ -18,7 +18,7 @@ RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
 RUN cd cmake-3.17.3-Linux-x86_64
 RUN ./bootstrap
 RUN make
-RUN make install
+RUN make install -y whatever
 RUN cmake --version
 RUN cd /
 
