@@ -16,6 +16,7 @@ RUN gcc --version
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
+RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN python --version
 
 # Install python modules
