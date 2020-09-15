@@ -6,7 +6,8 @@ RUN apt-get update -q
 RUN apt-get -y upgrade
 RUN apt-get install -y -q wget make git libfl-dev
 
-COPY pip-install-list.txt .
+# T
+# COPY pip-install-list.txt .
 
 # Install C/C++
 RUN apt-get install make -y
