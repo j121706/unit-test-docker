@@ -6,7 +6,7 @@ RUN apt-get update -q
 RUN apt-get -y upgrade
 RUN apt-get install -y -q wget make git libfl-dev
 
-# T
+# This line is for docker hub build
 # COPY pip-install-list.txt .
 
 # Install C/C++
@@ -21,8 +21,9 @@ RUN apt-get install -y -q python3 python3-pip
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN python --version
 
+# This line is for docker hub build
 # Install python modules
-RUN pip3 install -r pip-install-list.txt
+# RUN pip3 install -r pip-install-list.txt
 
 # Download and install Golang
 RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
