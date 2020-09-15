@@ -33,7 +33,7 @@ RUN python --version
 #RUN echo "export PATH=$PATH:$GOROOT" >> /etc/profile
 #RUN go version
 
-RUN apt install golang
+RUN apt install golang -y
 RUN go version
 
 # Download and Install Cmake
