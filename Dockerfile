@@ -1,5 +1,4 @@
-FROM ubuntu:20.04
-
+FROM alpine:latest
 
 # Install Package
 RUN apt-get update -q
