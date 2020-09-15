@@ -11,15 +11,12 @@ COPY pip-install-list.txt .
 RUN apt-get install make -y
 RUN apt-get install build-essential -y
 RUN apt-get install g++ -y
-
-# Install Cmake
-RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
-RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
-RUN ln -sf cmake-3.17.3-Linux-x86_64/bin/*  /usr/bin/
-RUN cmake --version
+RUN g++ --version
+RUN gcc --version
 
 # Install Python
 RUN apt-get install -y -q python3 python3-pip
+RUN python --version
 
 # Install python modules
 RUN pip3 install -r pip-install-list.txt
@@ -27,6 +24,14 @@ RUN pip3 install -r pip-install-list.txt
 # Download and install Golang
 RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
 RUN tar -xvf go1.11.5.linux-amd64.tar.gz
+RUN export PATH=$PATH:/usr/local/go/bin
+RUN go version
+
+# Download and Install Cmake
+RUN wget https://cmake.org/files/v3.17/cmake-3.17.3-Linux-x86_64.tar.gz
+RUN tar -xvf cmake-3.17.3-Linux-x86_64.tar.gz
+RUN ln -sf cmake-3.17.3-Linux-x86_64/bin/*  /usr/bin/
+RUN cmake --version
 
 # Move files
 RUN mkdir /usr/local/go
