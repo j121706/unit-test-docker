@@ -27,6 +27,8 @@ RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
 RUN tar -xvf go1.11.5.linux-amd64.tar.gz
 RUN export PATH=$PATH:/usr/local/go/bin
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+RUN echo "export GOPATH=/home/go" >> /etc/profile
+RUN echo "export PATH=$PATH:$GOROOT" >> /etc/profile
 RUN go version
 
 # Download and Install Cmake
